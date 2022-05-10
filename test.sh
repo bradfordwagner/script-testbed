@@ -9,6 +9,7 @@ echo ${palette_lpurple}****************************************** ${palette_rest
 # vault list auth/approle/role | jq
 
 role=astra_cicd
+role=k8s_auth_bootstrapper
 ROLE_ID=$(vault read auth/approle/role/${role}/role-id -format=json | jq '.data.role_id' -r)
 SECRET_ID=$(vault write auth/approle/role/${role}/secret-id -format=json | jq '.data.secret_id' -r)
 export VAULT_TOKEN=$(vault write auth/approle/login role_id=${ROLE_ID} secret_id=${SECRET_ID} -format=json | jq -r '.auth.client_token')
