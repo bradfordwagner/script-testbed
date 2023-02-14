@@ -7,4 +7,4 @@ watch:
 dev_pipeline: run
 
 run:
-	./main.sh
+	zsh -lc ". ./main.sh"
