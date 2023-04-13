@@ -1,4 +1,8 @@
 
+# default
+run_zsh:
+	zsh -lc ". ./main.sh"
+
 # watch / develop
 d: dev
 dev: watch
@@ -13,6 +17,3 @@ dev_pipeline: run_zsh
 run_bash:
 	bash -lc ". ./main.sh"
 
-# try to use this as default
-run_zsh:
-	zsh -lc ". ./main.sh"
